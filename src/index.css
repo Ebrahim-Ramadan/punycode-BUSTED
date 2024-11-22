@@ -50,10 +50,19 @@ body {
 }
 
 
-
 ::selection {
-  background-color: hsl(var(--accent));
-  color: hsl(var(--foreground));
+  background-color: var(--text-dark);
+  color: var(--background-dark);
+}
+
+html.light ::selection {
+  background-color: var(--text-light);
+  color: var(--background-light);
+}
+
+html.dark ::selection {
+  background-color: var(--text-dark);
+  color: var(--background-dark);
 }
 
 .dark {

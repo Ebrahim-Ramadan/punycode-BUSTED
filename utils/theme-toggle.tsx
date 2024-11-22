@@ -1,8 +1,6 @@
-import { Lightbulb, LightbulbOff, Sun, SunDim } from 'lucide-react';
+import {  Sun, SunDim } from 'lucide-react';
 import React, { useEffect, useState } from 'react';
 
-
-const KEYS = ['ctrl+u', 'meta+u'];
 
 export function ModeToggle() {
   const [theme, setTheme] = useState(
@@ -35,7 +33,7 @@ export function ModeToggle() {
   return (
     <button
       onClick={toggleTheme}
-      className="p-2 fixed top-0 left-0 z-50 "
+      className="p-4 fixed top-0 left-0 z-50 "
     >
       {theme === 'light' ? 
       <Sun />

@@ -3,14 +3,14 @@ import React from "react";
 
 export const OSS = () => {
   return (
-    <div className="fixed top-0 right-0 p-4 text-neutral-500 dark:text-neutral-300 font-medium text-xs md:text-sm">
+    <div className="fixed top-0 right-0 p-4 ">
       <a
         href="https://github.com/Ebrahim-Ramadan/punycode-BUSTED"
         target="_blank"
         rel="noopener noreferrer"
-        className="text-black hover:underline"
+        className="text-black dark:text-white hover:underline"
       >
-        <Github/>
+        <Github className="hover:scale-110 transition-transform duration-200 ease-in-out" />
       </a>
     </div>
   );
