@@ -2,12 +2,30 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + React</title>
+    <meta name="description" content="Punycode Busted is a tool to detect and analyze punycode domain names that may be used for phishing or impersonation." />
+    <meta name="keywords" content="Punycode, domain names, phishing detection, IDN homograph attack, domain security, Unicode domains" />
+    <meta name="author" content="Your Name or Organization" />
+    <meta name="robots" content="index, follow" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="theme-color" content="#000000" />
+    <meta property="og:title" content="PUNYCODE BUSTED" />
+    <meta property="og:description" content="Detect punycode domain names and safeguard against phishing attacks." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://yourwebsite.com" />
+    <meta property="og:image" content="https://yourwebsite.com/images/og-image.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="PUNYCODE BUSTED" />
+    <meta name="twitter:description" content="Analyze and detect punycode domain names used for impersonation or phishing." />
+    <meta name="twitter:image" content="https://yourwebsite.com/images/twitter-image.png" />
+    <title>PUNYCODE BUSTED</title>
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root" class="bg-black"></div>
     <script type="module" src="/src/main.jsx"></script>
+    <script>
+      if (!document.startViewTransition) switchTheme()
+      document.startViewTransition(switchTheme);
+    </script>
   </body>
 </html>
