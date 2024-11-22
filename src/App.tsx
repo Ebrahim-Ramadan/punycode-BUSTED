@@ -72,8 +72,19 @@ const PunycodeDetector = () => {
   };
 
   return (
-    <div className="w-full flex flex-col items-center justify-center bg-gray-50 dark:bg-black py-8 px-2 min-h-screen">
-      <div className="w-full md:max-w-2xl bg-white dark:bg-neutral-950 rounded-lg shadow-sm p-2 py-4 md:p-8">
+    <div className="w-full flex flex-col items-center justify-center bg-gray-50 dark:bg-black/10 py-8 px-2 min-h-screen">
+  <div
+  className="inset-0 absolute top-0 left-0 w-full h-full bg-black -z-10"
+  style={{
+    backgroundImage: `url(${new URL('./assets/dark-bg.png', import.meta.url).href})`,
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    filter: 'blur(100px)', // Adjust the blur intensity as needed
+  }}
+></div>
+
+
+      <div className="w-full md:max-w-2xl bg-white dark:bg-neutral-950/30 rounded-lg shadow-sm p-2 py-4 md:p-8 backdrop-blur-2xl">
         <div className="mb-6">
           <p className="text-2xl font-bold text-black dark:text-white text-center">
             PUNYCODE BUSTED
