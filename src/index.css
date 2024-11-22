@@ -23,94 +23,76 @@
     0.9833 59.06%, 0.9915 68.74%, 1 100%
   );
   
-  --foreground-rgb: 255, 255, 255;
-  --background-start-rgb: 0, 0, 0;
-  --background-end-rgb: 0, 0, 0;
+  --background-light: #ffffff;
+  --background-dark: #1a1a1a;
+  --text-light: #000000;
+  --text-dark: #ffffff;
+
+}
+html.light {
+  background-color: var(--background-light);
+  color: var(--text-light);
+}
+
+html.dark {
+  background-color: var(--background-dark);
+  color: var(--text-dark);
 }
 html {
   scroll-behavior: smooth;
 }
+::selection {
+  background-color: hsl(var(--accent));
+  color: hsl(var(--foreground));
+}
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-::view-transition-new(root) {
-  mask: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40"><circle cx="20" cy="20" r="20" fill="white"/></svg>')
-    center / 0 no-repeat;
-  animation: scale 1s;
+
+
+::selection {
+  background-color: hsl(var(--accent));
+  color: hsl(var(--foreground));
 }
 
-::view-transition-old(root),
-.dark::view-transition-old(root) {
-  animation: none;
-  z-index: -1;
-}
-.dark::view-transition-new(root) {
-  animation: scale 1s;
-}
-
-@keyframes scale {
-  to {
-    mask-size: 200vmax;
-  }
-}
-::view-transition-group(root) {
-  animation-timing-function: var(--expo-out);
-}
-
-::view-transition-new(root) {
-  mask: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40"><defs><filter id="blur"><feGaussianBlur stdDeviation="2"/></filter></defs><circle cx="20" cy="20" r="18" fill="white" filter="url(%23blur)"/></svg>') center / 0 no-repeat;
-  animation: scale 1s;
-}
-
-::view-transition-old(root),
-.dark::view-transition-old(root) {
-  animation: none;
-  z-index: -1;
-}
-.dark::view-transition-new(root) {
-  animation: scale 1s;
+.dark {
+  --background: 0 0% 8%;
+  --foreground: 0 0% 98%;
+  --card: 0 0% 3.9%;
+  --card-foreground: 0 0% 98%;
+  --popover: 0 0% 3.9%;
+  --popover-foreground: 0 0% 98%;
+  --primary: 0 0% 98%;
+  --primary-foreground: 0 0% 9%;
+  --secondary: 0 0% 14.9%;
+  --secondary-foreground: 0 0% 98%;
+  --muted: 0 0% 14.9%;
+  --muted-foreground: 0 0% 63.9%;
+  --accent: 0 0% 14.9%;
+  --accent-foreground: 0 0% 98%;
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 0 0% 98%;
+  --border: 0 0% 14.9%;
+  --input: 0 0% 14.9%;
+  --ring: 0 0% 83.1%;
+  --chart-1: 220 70% 50%;
+  --chart-2: 160 60% 45%;
+  --chart-3: 30 80% 55%;
+  --chart-4: 280 65% 60%;
+  --chart-5: 340 75% 55%;
 }
 
-@keyframes scale {
-  to {
-    mask-size: 200vmax;
-  }
-}
-::view-transition-group(root) {
-  animation-timing-function: var(--expo-out);
+.dark ::selection {
+  background-color: hsl(var(--accent));
+  color: hsl(var(--foreground));
 }
 
-::view-transition-new(root) {
-  mask: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40"><defs><filter id="blur"><feGaussianBlur stdDeviation="2"/></filter></defs><circle cx="0" cy="0" r="18" fill="white" filter="url(%23blur)"/></svg>') top left / 0 no-repeat;
-  mask-origin: content-box;
-  animation: scale 1s;
-  transform-origin: top left;
-}
-
-::view-transition-old(root),
-  .dark::view-transition-old(root) {
-  animation: scale 1s;
-  transform-origin: top left;
-  z-index: -1;
-}
-
-@keyframes scale {
-  to {
-    mask-size: 350vmax;
-  }
-}
 ::view-transition-group(root) {
   animation-duration: 0.7s;
   animation-timing-function: var(--expo-out);
 }
-      
+
 ::view-transition-new(root) {
   animation-name: reveal-light;
 }
@@ -141,3 +123,5 @@ body {
     clip-path: polygon(171% 50%, 50% 171%, -50% 71%, 50% -71%);
   }
 }
+
+

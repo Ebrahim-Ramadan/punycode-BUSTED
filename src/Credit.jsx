@@ -2,7 +2,7 @@ import React from "react";
 
 export const Credit = () => {
   return (
-    <div className="fixed bottom-0 left-0 p-4  text-neutral-300 font-medium text-xs md:text-sm">
+    <div className="fixed bottom-0 left-0 p-4 text-neutral-500 dark:text-neutral-300 font-medium text-xs md:text-sm">
       Created by{" "}
       <a
         href="https://github.com/ebrahim-ramadan"
