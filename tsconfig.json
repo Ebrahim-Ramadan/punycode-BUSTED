@@ -1,15 +1,16 @@
 {
     "compilerOptions": {
+      "jsx": "react-jsx",
+      "jsxImportSource": "react",
       "target": "ESNext",
       "lib": ["DOM", "DOM.Iterable", "ESNext"],
       "module": "ESNext",
       "skipLibCheck": true,
-      "moduleResolution": "bundler",
+      "moduleResolution": "node",
       "allowImportingTsExtensions": true,
       "resolveJsonModule": true,
       "isolatedModules": true,
       "noEmit": true,
-      "jsx": "react-jsx",
       "strict": true,
       "noUnusedLocals": false,
       "noUnusedParameters": true,
