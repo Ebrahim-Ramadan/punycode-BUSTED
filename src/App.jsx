@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState , lazy} from 'react';
 import { AlertCircle, Shield, ShieldAlert } from 'lucide-react';
 
 const PunycodeDetector = () => {
@@ -19,6 +19,12 @@ const PunycodeDetector = () => {
       .replace(/\/.*$/, '');
   };
 
+  /**
+   * Analyze the domain name entered by the user and checks if it contains
+   * punycode or non-ascii characters.
+   *
+   * @returns {void}
+   */
   const analyzeDomain = () => {
     setError('');
     setAnalysis(null);
@@ -63,6 +69,7 @@ const PunycodeDetector = () => {
 
   return (
     <div className="w-full flex flex-col items-center justify-center bg-black py-8 px-2">
+      
       <div className="w-full md:max-w-2xl bg-neutral-950 rounded-lg shadow-xl p-2 py-4 md:p-8">
         <div className="mb-6">
           <p className="text-2xl font-bold text-white text-center">PUNYCODE BUSTED</p>
@@ -129,6 +136,7 @@ const PunycodeDetector = () => {
           )}
         </div>
       </div>
+      
     </div>
   );
 };
