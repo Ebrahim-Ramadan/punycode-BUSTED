@@ -98,7 +98,17 @@ const App = () => {
         }}
       ></div>
 
-      <div className="w-full md:max-w-2xl bg-white dark:bg-neutral-950/30 rounded-lg shadow-sm p-2 py-4 md:p-8 backdrop-blur-2xl">
+<div className="fixed inset-0 h-[100lvh] pointer-events-none contain-strict z-[-1]">
+  <div className="absolute top-0 left-0 opacity-75">
+    <img src="https://static.cdn-luma.com/files/2314fa198506e8e8/blue-background-blob.png" className="pointer-events-none" alt=""/>
+  </div>
+  <div className="absolute -bottom-[250px] -right-[150px] opacity-75 hidden max-small:block">
+    <img src="https://static.cdn-luma.com/files/2314fa198506e8e8/green-background-blob.png" className="pointer-events-none" alt=""/>
+  </div>
+</div>
+
+
+      <div className="w-full md:max-w-2xl bg-white dark:bg-neutral-950/30 rounded-lg shadow-sm p-2 py-4 md:p-8 ">
         <div className="mb-6">
           <p className="text-2xl font-bold text-black dark:text-white text-center">
             PUNYCODE BUSTED
