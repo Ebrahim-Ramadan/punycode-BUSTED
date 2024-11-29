@@ -1,5 +1,5 @@
 import {  Sun, SunDim } from 'lucide-react';
-import React, { useEffect, useState } from 'react';
+import  { useEffect, useState } from 'react';
 
 
 export function ModeToggle() {
@@ -7,6 +7,7 @@ export function ModeToggle() {
     (localStorage.getItem('theme') ) || 'light'
   );
 
+// @ts-ignore
   const handleChangeTheme = (newTheme) => {
     if (theme === newTheme) return;
 
@@ -16,8 +17,9 @@ export function ModeToggle() {
       localStorage.setItem('theme', newTheme);
       setTheme(newTheme);
     };
-
+// @ts-ignore
     if (!document.startViewTransition) return applyTheme();
+// @ts-ignore
     document.startViewTransition(applyTheme);
   };
 

@@ -1,21 +1,8 @@
 
 import  { useState, useCallback } from 'react';
 import { AlertCircle, Shield, ShieldAlert } from 'lucide-react';
+import { DomainAnalysis, DomainPart, ValidationResult } from './types/domains';
 
-export interface DomainPart {
-  original: string;
-  punycode: string;
-  containsNonAscii: boolean;
-  isPunycode: boolean;
-}
-export interface ValidationResult {
-  isValid: boolean;
-  error?: string;
-}
-export interface DomainAnalysis {
-  parts: DomainPart[];
-  isSuspicious: boolean;
-}
 const App = () => {
   const [domain, setDomain] = useState('');
   const [analysis, setAnalysis] = useState<DomainAnalysis | null>(null);
@@ -54,6 +41,7 @@ const App = () => {
     const punyCoded :DomainPart[]= cleanedDomain.toLowerCase().split('.').map((part) => {
       try {
         const ascii = part.includes('xn--') ? part : `xn--${part}`;
+        const nonasciishit = /[^\u0000-\u007F]/.test(part);
         return {
           original: part,
           punycode: ascii,
@@ -94,7 +82,7 @@ const App = () => {
           backgroundImage: `url(${new URL('./assets/dark-bg.png', import.meta.url).href})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
-          filter: 'blur(100px)',
+          filter: 'blur(70px)',
         }}
       ></div>
 
